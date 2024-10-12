@@ -57,7 +57,7 @@ jobs:
         sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.6/g" target/linux/x86/Makefile
         sed -i "s/KERNEL_TESTING_PATCHVER:=*.*/KERNEL_TESTING_PATCHVER:=6.6/g" target/linux/x86/Makefile      
 
-        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='AE86Wrt-X86-Lite-$(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings
+        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi-X86-Lite '/g" package/lean/default-settings/files/zzz-default-settings
         
     - name: Configuration Customization - Build_x86_66_lite
       env:
@@ -120,7 +120,7 @@ jobs:
       run: |
         time=$(date +%Y%m%d%H%M%S)
         release_tag="$time"
-        release_name="软路由(X86_64)精简版-OpenWrt-6.6内核-$(date +%Y%m%d)"
+        release_name="X86_64-OpenWrt-6.6-$(date +%Y%m%d)"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT   
 
