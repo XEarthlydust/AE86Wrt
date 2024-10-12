@@ -6,20 +6,20 @@
 
 #补充汉化
 echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
-echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
+echo -e "msgstr \"唱跳Raper\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
-echo -e "msgstr \"网络存储\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
+echo -e "msgstr \"常乐天君\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 echo -e "\nmsgid \"VPN\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
-echo -e "msgstr \"魔法网络\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
+echo -e "msgstr \"魔法烧酒\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 ##补充汉化
 echo -e "\nmsgid \"General\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
-echo -e "msgstr \"常规\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
+echo -e "msgstr \"常规喵\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
 
 echo -e "\nmsgid \"LOG\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
-echo -e "msgstr \"日志\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
+echo -e "msgstr \"日志喵\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
 
               
 ##配置ip等
@@ -54,16 +54,16 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/
 
 
 ##加入作者信息
-sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='AE86Wrt-$(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings   
-sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By DaoDao'/g" package/lean/default-settings/files/zzz-default-settings
-cp -af feeds/extraipk/patch/diy/banner  package/base-files/files/etc/banner
+sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi'/g" package/lean/default-settings/files/zzz-default-settings   
+sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION='The Hero with a Thousand Faces'/g" package/lean/default-settings/files/zzz-default-settings
+## cp -af feeds/extraipk/patch/diy/banner  package/base-files/files/etc/banner
 
-sed -i "2iuci set istore.istore.channel='ae86_daodao'" package/lean/default-settings/files/zzz-default-settings
+sed -i "2iuci set istore.istore.channel='hanabi'" package/lean/default-settings/files/zzz-default-settings
 sed -i "3iuci commit istore" package/lean/default-settings/files/zzz-default-settings
 
 
 ##更改主机名
-sed -i "s/hostname='.*'/hostname='AE86Wrt'/g" package/base-files/files/bin/config_generate
+sed -i "s/hostname='.*'/hostname='Hanabi'/g" package/base-files/files/bin/config_generate
 
 ##WiFi
 sed -i "s/OpenWrt/AE86/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
