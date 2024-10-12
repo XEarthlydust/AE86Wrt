@@ -9,10 +9,10 @@ echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 echo -e "msgstr \"唱跳Raper\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
-echo -e "msgstr \"常乐天君\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
+echo -e "msgstr \"NAS\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 echo -e "\nmsgid \"VPN\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
-echo -e "msgstr \"魔法烧酒\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
+echo -e "msgstr \"魔法\"" >> feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 ##补充汉化
 echo -e "\nmsgid \"General\"" >> package/feeds/luci/luci-app-dnsforwarder/po/zh-cn/dnsforwarder.po
@@ -55,7 +55,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/
 
 ##加入作者信息
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi'/g" package/lean/default-settings/files/zzz-default-settings   
-sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION='The Hero with a Thousand Faces'/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION='Dreamdiver'/g" package/lean/default-settings/files/zzz-default-settings
 ## cp -af feeds/extraipk/patch/diy/banner  package/base-files/files/etc/banner
 
 sed -i "2iuci set istore.istore.channel='hanabi'" package/lean/default-settings/files/zzz-default-settings
