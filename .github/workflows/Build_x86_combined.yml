@@ -64,8 +64,8 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        cp -f ../diy/${{ matrix.config.diy_script }}/${{ matrix.config.diy_script }}2.sh ./
-        chmod +x ./${{ matrix.config.diy_script }}2.sh && ./${{ matrix.config.diy_script }}2.sh
+        cp -f ../diy/${{ matrix.config.diy_script }}/${{ matrix.config.diy_script }}3.sh ./
+        chmod +x ./${{ matrix.config.diy_script }}3.sh && ./${{ matrix.config.diy_script }}3.sh
         sed -i "s/KERNEL_PATCHVER:=.*/KERNEL_PATCHVER:=${{ matrix.config.kernel_ver }}/g" target/linux/x86/Makefile
         sed -i "s/KERNEL_TESTING_PATCHVER:=.*/KERNEL_TESTING_PATCHVER:=${{ matrix.config.kernel_ver }}/g" target/linux/x86/Makefile
         
