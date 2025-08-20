@@ -32,6 +32,15 @@ jobs:
             diy_script: "lean"
             type: "lede"
 
+          - name: "X86-R24.10-6.6"
+            repo_url: "https://github.com/openwrt/openwrt"
+            repo_branch: "openwrt-24.10"
+            kernel_ver: "6.6"
+            config_file: "./configs/X86/x86_r2410.config"
+            file_name: "x86_r2410"
+            diy_script: "op"
+            type: "op"
+
     steps:
     - name: Checkout
       uses: actions/checkout@main
@@ -66,8 +75,8 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        cp -f ../diy/${{ matrix.config.diy_script }}/${{ matrix.config.diy_script }}3.sh ./
-        chmod +x ./${{ matrix.config.diy_script }}3.sh && ./${{ matrix.config.diy_script }}3.sh
+        cp -f ../diy/${{ matrix.config.diy_script }}/${{ matrix.config.diy_script }}2.sh ./
+        chmod +x ./${{ matrix.config.diy_script }}2.sh && ./${{ matrix.config.diy_script }}2.sh
         sed -i "s/KERNEL_PATCHVER:=.*/KERNEL_PATCHVER:=${{ matrix.config.kernel_ver }}/g" target/linux/x86/Makefile
         sed -i "s/KERNEL_TESTING_PATCHVER:=.*/KERNEL_TESTING_PATCHVER:=${{ matrix.config.kernel_ver }}/g" target/linux/x86/Makefile
         
@@ -76,8 +85,8 @@ jobs:
            sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi-x86_64'/g" package/lean/default-settings/files/zzz-default-settings
            sed -i "s/OPENWRT_RELEASE=\"*.*\"/OPENWRT_RELEASE=\"Hanabi-x86_64\"/g" package/base-files/files/usr/lib/os-release
         elif [ "${{ matrix.config.type }}" = "op" ]; then
-           sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi-x86_64-R24.10'/g" package/base-files/files/etc/openwrt_release
-           sed -i "s/OPENWRT_RELEASE=\"*.*\"/OPENWRT_RELEASE=\"Hanabi-x86_64-R24.10\"/g" package/base-files/files/usr/lib/os-release
+           sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi-x86_64'/g" package/base-files/files/etc/openwrt_release
+           sed -i "s/OPENWRT_RELEASE=\"*.*\"/OPENWRT_RELEASE=\"Hanabi-x86_64\"/g" package/base-files/files/usr/lib/os-release
         fi
 
     - name: Configuration Customization
