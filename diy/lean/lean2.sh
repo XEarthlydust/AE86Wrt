@@ -6,16 +6,16 @@
 
 #补充汉化
 echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"控制面板\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
 echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "msgstr \"网络存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"存储共享\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
 echo -e "\nmsgid \"VPN\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "msgstr \"魔法网络\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"魔法烧酒\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
 echo -e "\nmsgid \"Temperature\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "msgstr \"温度\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"温度喵\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
               
 ##配置ip等
@@ -39,21 +39,17 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-n
 
 
 ##加入作者信息
-sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='AE86Wrt-$(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings   
-sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By DaoDao'/g" package/lean/default-settings/files/zzz-default-settings
-cp -af feeds/2305ipk/patch/diy/banner  package/base-files/files/etc/banner
+sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi'/g" package/lean/default-settings/files/zzz-default-settings   
+sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION='The Hero with a Thousand Faces'/g" package/lean/default-settings/files/zzz-default-settings
+## cp -af feeds/2305ipk/patch/diy/banner  package/base-files/files/etc/banner
 
-sed -i "2iuci set istore.istore.channel='ae86_daodao'" package/lean/default-settings/files/zzz-default-settings
+sed -i "2iuci set istore.istore.channel='hanabi'" package/lean/default-settings/files/zzz-default-settings
 sed -i "3iuci commit istore" package/lean/default-settings/files/zzz-default-settings
-
-##
-sed -i "s/DISTRIB_ID='*.*'/DISTRIB_ID='AE86Wrt'/g" package/base-files/files/etc/openwrt_release
-date '+%Y%m%d%H' > package/base-files/files/etc/openwrt_version
 
 
 ##更改主机名
-sed -i "s/hostname='.*'/hostname='AE86Wrt'/g" package/base-files/files/bin/config_generate
-sed -i "s/hostname='.*'/hostname='AE86Wrt'/g" package/base-files/luci2/bin/config_generate
+sed -i "s/hostname='.*'/hostname='Hanabi'/g" package/base-files/files/bin/config_generate
+sed -i "s/hostname='.*'/hostname='Hanabi'/g" package/base-files/luci2/bin/config_generate
 
 ##WiFi
 sed -i "s/LEDE/AE86/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
