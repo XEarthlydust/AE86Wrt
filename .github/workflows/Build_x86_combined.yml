@@ -34,7 +34,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@change
 
     - name: Free disk space
       uses: xiangfeidexiaohuo/actions@free-disk
@@ -72,10 +72,10 @@ jobs:
 
         if [ "${{ matrix.config.type }}" = "lede" ]; then
            sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi-x86_64'/g" package/lean/default-settings/files/zzz-default-settings
-           sed -i "s/OPENWRT_RELEASE="*.*"/OPENWRT_RELEASE=\"Hanabi-x86_64\"/g" package/base-files/files/usr/lib/os-release
+           sed -i "s/OPENWRT_RELEASE=\"*.*\"/OPENWRT_RELEASE=\"Hanabi-x86_64\"/g" package/base-files/files/usr/lib/os-release
         elif [ "${{ matrix.config.type }}" = "op" ]; then
            sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Hanabi-x86_64-R24.10'/g" package/base-files/files/etc/openwrt_release
-           sed -i "s/OPENWRT_RELEASE="*.*"/OPENWRT_RELEASE=\"Hanabi-x86_64-R24.10\"/g" package/base-files/files/usr/lib/os-release
+           sed -i "s/OPENWRT_RELEASE=\"*.*\"/OPENWRT_RELEASE=\"Hanabi-x86_64-R24.10\"/g" package/base-files/files/usr/lib/os-release
         fi
 
     - name: Configuration Customization
