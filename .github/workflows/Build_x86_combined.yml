@@ -55,7 +55,7 @@ jobs:
 
     - name: Clone source
       run: |
-        git clone https://github.com/xiangfeidexiaohuo/AE86Wrt.git && mv ./AE86Wrt/* ./ && rm -rf ./AE86Wrt
+        git clone -b change https://github.com/XEarthlydust/AE86Wrt.git && mv ./AE86Wrt/* ./ && rm -rf ./AE86Wrt
         git clone --depth 1 ${{ matrix.config.repo_url }} -b ${{ matrix.config.repo_branch}} openwrt
         cd openwrt
         cp -f ../diy/${{ matrix.config.diy_script }}/${{ matrix.config.diy_script }}1.sh ./
